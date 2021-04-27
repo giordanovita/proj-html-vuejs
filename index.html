@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- font awesame -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <!-- vue js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -13,14 +16,134 @@
 
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
         <!-- componente vue header  -->
-        <header></header>
-        
+        <header>
+            <!-- componente vue slider  -->
+<!-- componente jumbotron  -->
+            <ul class="header-slider">
+                <li> 
+                    <img  src="svg/arrow.svg" alt="">
+                </li>
+    
+                <li>
+                   <img  @mouseover="stopSlidesLoop"  @mouseleave="slidesLoop" v-bind:src="imgNavSlider[index]" alt="" >
+                   <div  class="slider-test">
+                      <div v-if='index==0' > 
+                            <h1>Help you achieve anything <i class="fas fa-circle"></i></h1>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A labore harum corporis omnis, perspiciatis expedita aut totam .</p>
+                      </div> 
+                        
+                       <div v-if='index==1'>
+                            <h1>We are Everald <i class="fas fa-circle"></i></h1>
+                            
+                        </div>
+                    
+                        <div v-if='index==2'>
+                            <h1>Our Team <i class="fas fa-circle"></i></h1>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A labore harum corporis omnis, perspiciatis expedita aut totam .</p>
+                            
+                        </div>
+                        <div class="hdButt">
+                            <span>
+                                <a  href="">READ MORE</a> <label class="lt-border"></label>
+                            </span>
+                            <span>
+                                <a  href="">PURCHASE</a> <label class="lt-border"></label>
+                            </span>
+                        </div>
+                    </div>
+                    
+               </li>
+    
+               <li>
+                <i @click="nextSlide" class="fas fa-angle-right" ></i>
+               </li>
+            </ul>
+
+            <nav>
+                <div class="logo-container">
+                    <img src="img/logo-img-01.png" alt="">
+                </div>
+
+                <div class="list-nav-container">
+                    <ul>
+                        <li v-for='item in navList'>
+                            <a href="">{{item.toUpperCase()}}</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
         <main>
-            <section></section>
-            <section></section>
+            <!-- componente jumbotron  -->
+
+            <section class="spacialties">
+                <h2>Our specialties <i class="fas fa-circle"></i></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <div class="h-line-cont"></div>
+
+                <div class="spacialties-cards">
+
+                    <div class="spacialties-card">
+                    
+                        <img src="svg/svg-0.svg" alt="">
+                        <h5>Knowing</h5>
+                        <p>Lorem ipsum dolor sit amet, quis consect.</p>
+
+                    </div>
+
+                    <div class="spacialties-card">
+                    
+                        <img src="svg/svg-1.svg" alt="">
+                        <h5>Selling</h5>
+                        <p>Lorem ipsum dolor sit amet, quis consect.</p>
+
+
+                    </div>         
+                    <div class="spacialties-card">
+                    
+                        <img src="svg/svg-2.svg" alt="">
+                        <h5>Learning</h5>
+                        <p>Lorem ipsum dolor sit amet, quis consect.</p>
+
+                    </div>
+                    <div class="spacialties-card">
+                    
+                        <img src="svg/svg-3.svg" alt="">
+                        <h5>Contact</h5>
+                        <p>Lorem ipsum dolor sit amet, quis consect.</p>
+
+
+                    </div>
+
+                </div>
+            </section>
+            <section class="blog-slider">
+
+                <ul class="jason-slider">
+                    <li>
+                        <img  @mouseover="stopSlidesLoop"  @mouseleave="slidesLoop" v-bind:src="imgSectJason[index]" alt="" >
+                    </li>
+                    <li>
+                        <img  src="svg/arrow.svg" alt="">
+                        <img  src="svg/arrow.svg" alt="">
+
+                    </li>
+                </ul>
+
+                <div class="maxi-label">
+                   <h3>Jason Bickford</h3>
+                   <span>Founder and Executive Director</span>
+                   <div class="h-line-cont"></div>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                </div>
+            </section>
             <section></section>
             <section></section>
             <section></section>
@@ -34,6 +157,7 @@
         <!-- componente vue footer  -->
         <footer></footer>
     </div>
-    
+
 </body>
+
 </html>
