@@ -46,28 +46,32 @@ function launch(){
                                     when:'May 5,2019',
                                     who:'Amanda Doe',
                                     title:'New Business Day',
-                                    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  '
+                                    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  ',
+                                    visibility:true
                                 },
                                 {
                                     img:"img/h1-blog-img-02.jpg",
                                     when:'May 5,2019',
                                     who:'Amanda Doe',
                                     title:'Boost Motivation',
-                                    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  '
+                                    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  ',
+                                    visibility:true
                                 },
                                 {
                                     img:"img/h1-blog-img-03.jpg",
                                     when:'May 5,2019',
                                     who:'Amanda Doe',
                                     title:'Next Investment',
-                                    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  '
+                                    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  ',
+                                    visibility:true
                                 },
                                 {
                                     img:"img/h1-blog-img-04.jpg",
                                     when:'May 5,2019',
                                     who:'Amanda Doe',
                                     title:'Team Bulding',
-                                    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  '
+                                    text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  ',
+                                    visibility:false
                                 },
                                 
                             ]
@@ -77,10 +81,43 @@ function launch(){
                     },
 
 
-                    created: function(){
-                        this.increase()
-                       
+                   mounted:{
+                    increase:function () {
+                        let speed = 40;
+                        let limit = parseInt(document.getElementById("value1").innerHTML, 10);
+                        let limit2 = parseInt(document.getElementById("value2").innerHTML, 10);
+                        let limit3 = parseInt(document.getElementById("value3").innerHTML, 10);
+                        let limit4 = parseInt(document.getElementById("value4").innerHTML, 10);
+    
+    
+                    
+                        for(let i = 0; i <= limit; i++) {
+                            setTimeout(function () {
+                                document.getElementById("value1").innerHTML = i + "%";
+                            }, speed * i);
+                        }
+    
+                        for(let i = 0; i <= limit2; i++) {
+                            setTimeout(function () {
+                                document.getElementById("value2").innerHTML = i + "%";
+                            }, speed * i);
+                        }
+    
+                        for(let i = 0; i <= limit3; i++) {
+                            setTimeout(function () {
+                                document.getElementById("value3").innerHTML = i + "%";
+                            }, speed * i);
+                        }
+    
+                        for(let i = 0; i <= limit4; i++) {
+                            setTimeout(function () {
+                                document.getElementById("value4").innerHTML = i + "%";
+                            }, speed * i);
+                        }
                     },
+                },
+
+                  
                         
                     
 
@@ -128,44 +165,16 @@ function launch(){
                         console.log(this.active)
                 },
 
-                increase:function () {
-                    let speed = 40;
-                    let limit = parseInt(document.getElementById("value1").innerHTML, 10);
-                    let limit2 = parseInt(document.getElementById("value2").innerHTML, 10);
-                    let limit3 = parseInt(document.getElementById("value3").innerHTML, 10);
-                    let limit4 = parseInt(document.getElementById("value4").innerHTML, 10);
-
-
                 
-                    for(let i = 0; i <= limit; i++) {
-                        setTimeout(function () {
-                            document.getElementById("value1").innerHTML = i + "%";
-                        }, speed * i);
-                    }
 
-                    for(let i = 0; i <= limit2; i++) {
-                        setTimeout(function () {
-                            document.getElementById("value2").innerHTML = i + "%";
-                        }, speed * i);
-                    }
-
-                    for(let i = 0; i <= limit3; i++) {
-                        setTimeout(function () {
-                            document.getElementById("value3").innerHTML = i + "%";
-                        }, speed * i);
-                    }
-
-                    for(let i = 0; i <= limit4; i++) {
-                        setTimeout(function () {
-                            document.getElementById("value4").innerHTML = i + "%";
-                        }, speed * i);
-                    }
+                showCards:function(){
+                    console.log(this.newsCards)
                 }
                 
               
 
-               
-            }
+            
+       }
         })
     }
 
@@ -177,7 +186,7 @@ function launch(){
       
 
 function init() {
-    launch();
+    launch()
 
 
 
@@ -186,4 +195,3 @@ function init() {
 
 }
 document.addEventListener('DOMContentLoaded', init);
-
