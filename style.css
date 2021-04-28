@@ -26,7 +26,7 @@ header{
 
 .header-slider li:nth-child(2) img {
     width: 100%;
-    height: 550px;
+    height: 600px;
     position: relative;
 }
 
@@ -158,7 +158,7 @@ nav{
     height: 400px;
     background-color: white;
     position: absolute;
-    top:79%;
+    top:85%;
     left:8%;
     right: 8%;
     z-index: 200;
@@ -172,6 +172,7 @@ nav{
     font-weight: 700;
     color: rgb(30, 30, 30);
     font-family: "Libre Baskerville";
+    margin-top: 85px;
 }
 
 .spacialties h2 i{
@@ -207,6 +208,7 @@ nav{
 .spacialties-cards{
     width: 100%;
     display: flex;
+   
 }
 
 .spacialties-card{
@@ -234,6 +236,8 @@ nav{
     height: auto;
     margin: auto;
     position: relative;
+    margin-top: 120px;
+
 }
 
 .jason-slider{
@@ -254,7 +258,7 @@ nav{
     background-color: white;
     position: absolute;
     right: 0;
-    bottom:8%
+    bottom:5.5%
     
 }
 
@@ -288,4 +292,328 @@ nav{
     line-height: 1.556em; 
     color: #606060;
 }
+
+.maxi-label .signature{
+
+}
+
+.maxi-label .social-icons i{
+    font-size:18px ;
+    border-radius: 100%;
+    background-color:#ff4612 ;
+    padding: 6px;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+
+}
+
+.maxi-label .social-icons i:first-child{
+    padding: 6px 7px;
+}
+
+.maxi-label .social-icons i:nth-child(2){
+    padding:6px 9px;   
+    margin: 0 7px; 
+}
+
+.events-cont{
+    width: 100%;
+    height: 900px;
+    position: relative;
+    margin-top: 140px;
+
+}
+
+.events-cont img{
+    width: 100%;
+    height: 800px;
+
+}
+
+.events-flayer{
+    width: 42%;
+    height: 600px;
+    background-color: #fafafa;
+    position: absolute;
+    top:11%;
+    left:8%;
+
+}
+
+.events-flayer .title-cont{
+    height: 60px;
+    width: 100%;
+    color: #1e1e1e;
+    box-shadow: 2px 3px 10px 0 rgb(0 0 0 / 9%);
+    z-index: 1;
+    margin: 25px 0;
+
+
+
+}
+
+.events-flayer h3{
+    font-family: "Libre Baskerville",serif;
+    padding: 1px 47px 8px;
+    font-size: 26px;
+    line-height: 1.308em;
+
+}
+
+.events-flayer li{
+    list-style-type: none;
+    padding: 20px 47px 15px 47px;
+    vertical-align: top;
+    height: calc(100% / 3 - 35px);
+    border-bottom: 1px solid #ececec;
+
+
+}
+
+.events-flayer li:first-child{
+    height: calc(100% / 3 - 50px);
+    padding: 10px 47px 15px 47px;
+
+
+}
+
+.events-flayer li:last-child{
+    border: none;
+}
+
+
+
+.calendar-box{
+    width: 70px;
+    vertical-align: top;
+    background-color:#ff4612 ;
+    color:#fafafa;
+    text-align: center;
+    display: inline-block;
+    padding: 4px 5px;
+    margin-top: 7px;
+    margin-right: 24px;
+}
+
+.calendar-box span:first-child{
+    font-family: "Libre Baskerville",serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.calendar-box span:last-child{
+    font-weight:300;
+    font-size: 13px;
+}
+
+
+.details-box{
+    width: calc(100% - 100px);
+    display: inline-block;
+
+}
+
+.details-box h4{
+    font-size: 24px;
+    line-height: 1.368em;
+    font-weight: 700;
+    color: #1e1e1e;
+    font-family: "Libre Baskerville",serif;
+}
+
+.details-box h4:hover{
+    color: #ff4612;
+    cursor: pointer;
+}
+
+.details-box span{
+    font-size: 15px;
+    line-height: 24px;
+    color: #555;
+    font-weight: 300;
+    display: block;
+}
+
+.fa-clock, .fa-map-marker-alt{
+    font-size: 13.5px;
+    margin-right: 6px;
+    color: #ff4612;
+
+}
+
+.fa-map-marker-alt{
+    margin-right: 7px;
+}
+
+
+.read-more{
+    color: #1e1e1e;
+    font-size: 15px;
+    line-height: 2em;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.creative{
+    width: 85%;
+    height: 400px;
+    margin: auto;
+    display: flex;
+}
+
+.creative-left-side{
+    width: calc(50% - 20px);
+    margin-right: 20px;
+
+}
+
+.creative-right-side{
+    width: calc(50% - 20px);
+
+    margin-left: 20px;
+  
+}
+
+
+.creative-left-side h3{
+    font-size: 35px;
+    line-height: 1.257em;
+    color: #1e1e1e;
+    font-family: "Libre Baskerville",serif;
+    margin: 25px 0;
+}
+
+.creative-left-side h3 i{
+    font-size: 7px;
+}
+
+.creative-left-side p{
+    margin: 25px 0;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.556em;
+    color: #606060;
+}
+
+
+
+.first-bar-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+.first-bar-cont label{
+    color: #1e1e1e;
+    font-family: "Libre Baskerville",serif;
+    font-size: 23px;
+    line-height: 1.368em;
+    font-weight: bold;
+    position: absolute;
+    bottom: 65%;
+    left: 3%;
+
+
+
+}
+
+.chart {
+    background-color: #e1e1e1;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 2px;
+    width: 500px;
+}
+    #value1, #value2, #value3, #value4 {
+    margin-left: 5px;
+    color:   #1e1e1e;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.368em;
+    font-family: "Libre Baskerville",serif;
+    position: absolute;
+    bottom: 65%;
+    right: 3%;
+
+    }
+
+.bar {
+    animation: load 3s normal forwards;
+    
+    border-radius: 100px;
+    background: #ff4612;
+    height: 5px;
+} 
+
+.bar.edu{
+    animation: load2 4s normal forwards;
+
+}
+
+.bar.lea{
+    animation: load3 2.5s normal forwards;
+
+}
+
+.bar.moti{
+    animation: load4 3s normal forwards;
+
+}
+
+
+@keyframes load {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 78%;
+    }
+}
+
+@keyframes load2 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 95%;
+    }
+}
+
+@keyframes load3 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 65%;
+    }
+}
+
+@keyframes load4 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 83%;
+    }
+}
+
+.news{
+    width: 100%;
+    height: 400px;
+}
+
+
+
+
+  
+
 
