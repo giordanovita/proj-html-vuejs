@@ -24,10 +24,8 @@
 
 <body>
     <div id="app">
-        <!-- componente vue header  -->
         <header>
-            <!-- componente vue slider  -->
-<!-- componente jumbotron  -->
+            <!-- slider header con testo che cambia con il cambiare dell'immagine -->
             <ul class="header-slider">
                 <li class="transparent"> 
                     
@@ -70,7 +68,7 @@
 
                </li>
             </ul>
-
+            <!-- nav che si sovrappone alo slider dell'header -->
             <nav>
                 <div class="logo-container">
                     <img src="img/logo-img-01.png" alt="">
@@ -95,7 +93,7 @@
         </header>
 
         <main>
-            <!-- componente jumbotron  -->
+            <!-- sezione specialties  -->
 
             <section class="spacialties">
                 <h2>Our specialties <i class="fas fa-circle"></i></h2>
@@ -138,6 +136,8 @@
 
                 </div>
             </section>
+
+            <!-- sezione con mini-slider e testo laterale sovrapposto -->
             <section class="blog-slider">
 
                 <ul class="jason-slider">
@@ -155,7 +155,6 @@
 
                     </li>
                 </ul>
-
                 <div class="maxi-label">
                    <h3>Jason Bickford</h3>
                    <span>Founder and Executive Director</span>
@@ -174,6 +173,7 @@
                 </div>
             </section>
 
+                <!-- sezione tabellone eventi con cambio immagine sull'hover di ogni evento -->
 
             <section class="events">
               <div class="events-cont">
@@ -213,7 +213,7 @@
               </div>  
 
             </section>
-
+            <!-- sezione creative con testo a sinistra e animazioni barre percentuali a destra -->
             <section class="creative">
 
                 <div class="creative-left-side">
@@ -239,7 +239,7 @@
                             <div class="chart">
 
                                 <div class="bar"></div>
-                                <!-- Change the value below -->
+                               
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@
                                 <div class="chart">
 
                                     <div class="bar edu"></div>
-                                    <!-- Change the value below -->
+                                   
                             </div>
                         </div>
                     </div>
@@ -264,7 +264,7 @@
                                 <div class="chart">
 
                                     <div class="bar lea"></div>
-                                    <!-- Change the value below -->
+                                   
                             </div>
                         </div>
                     </div>
@@ -277,14 +277,14 @@
                                 <div class="chart">
 
                                     <div class="bar moti"></div>
-                                    <!-- Change the value below -->
+                                   
                             </div>
                         </div>
                     </div>
                 </div>
                 
             </section>
-
+            <!-- sezione slider statico news -->
             <section class="news">
                <div class="news-container">
                    <h3>Latest news <i class="fas fa-circle"></i></h3>
@@ -349,7 +349,7 @@
                </div>
                 
             </section>
-
+            <!-- sezione slider personaggi principali azienda -->
             <section class="dark-slider">
 
                 <ul class="dark-slider-cont">
@@ -377,7 +377,7 @@
                         
             </section>
 
-
+            <!-- sezione statica video -->
             <section class="video">
 
                 <img src="img/h1-img-04.jpg" alt="">
@@ -386,6 +386,7 @@
 
             </section>
 
+            <!-- sezione skills azienda in cerchi centrati -->
             <section class="circles">
                 <div class="circles-container">
                     <div class="circle">
@@ -418,7 +419,7 @@
 
             </section>
 
-
+            <!-- sezione slider statico personaggi principali azienda -->
             <section class="slider-teach">
                 <div class="teachers-container">
                     <h2>We can teach you <i class="fas fa-circle"></i></h2>
@@ -462,6 +463,7 @@
 
             </section>
 
+            <!-- sezione form contact us -->
             <section class="form">
                 <div class="form-container">
                     <div class="left-map">
@@ -502,6 +504,7 @@
 
             </section>
 
+            <!-- slider aziende partners -->
             <section class="logos-slider">
                 <div class="owl-carousel owl-theme">
                     <div class="item"><img class='map'src="img/h4-clients-img-03.png" alt=""></div>
@@ -513,6 +516,7 @@
                 </div>
             </section>
 
+            <!-- sezione listino prezzi tariffari -->
             <section class="pricing">
                 <div class="pricing-text-container">
                     <h2>Pricing plans <i class="fas fa-circle"></i></h2>
@@ -583,7 +587,7 @@
 
         </main>
 
-        <!-- componente vue footer  -->
+        <!-- footer in quattro colonne allineate  -->
         <footer>
             <div class="footer-up-container">
 
@@ -653,21 +657,21 @@
                     </ul>
                 </div>  
             </div>
-
+            <!-- credits -->
             <div class="footer-douwn">
                 <span>
                     © 2021 Qode Interactive, All Rights Reserved
                 </span>
             </div>
-
+            <!-- componenti layout fixed -->
             <div class="fixed-items">
                 <span>
                     <img src="svg/svg-8.svg" alt="">
                 </span>
-                <span @click='turnUp' class="turn-up-cont">
-                    <i class='fas fa-long-arrow-alt-up turn-up'>
+                 <span @click='turnUp' class="turn-up-cont">
+                    <i class='fas fa-long-arrow-alt-up turn-up'> </i>
 
-                </span>
+                </span> 
                 <span >
                     <img src="svg/svg-7.svg" alt="">
                 </span>

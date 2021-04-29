@@ -1601,7 +1601,7 @@ line-height: 30px;
 }
 
 .turn-up-cont:hover{
-    webkit-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
     -moz-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     -o-transform: translateY(-5px);
@@ -1611,6 +1611,3 @@ line-height: 30px;
 
 
 
-
-
-    

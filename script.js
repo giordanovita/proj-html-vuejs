@@ -124,9 +124,6 @@ function launch(){
                     },
                     
 
-                  
-                        
-                    
 
         created: function () {
                     this.slidesLoop();
@@ -134,20 +131,10 @@ function launch(){
                 },
 
 
-                mounted() {
-                    document.addEventListener('scroll', this.scrollUp);
-                    document.addEventListener('scroll', this.scrollDown);
-                },
-               
-                    
-                
-       
-         
-          
-            
-        
 
        methods:{
+
+        /* funzione che mostra slide precedente */
             prevSlide:function(){
                 this.index--;
 
@@ -156,7 +143,8 @@ function launch(){
                 }
 
         },
-                    
+
+        /* funzione che mostra slide successiva */
             nextSlide:function(){
                 this.index++;
 
@@ -204,17 +192,18 @@ function launch(){
 
             },
                
-    
+            /* funzione che ripete in loop l'autoplay delle funziooni precedenti */
                 slidesLoop: function() {
                     this.loop = setInterval(this.nextSlide, 3000)
     
                 },
     
-                stopSlidesLoop: function() {
+                 stopSlidesLoop: function() {
     
                     clearInterval(this.loop);
-                },
+                }, 
 
+                /* funzione che mostra immagine all'hover degli eventi nella sezione events */
                 showImgEvents:function(el) {
 
                     let index= this.imgEvents.indexOf(el);
@@ -225,11 +214,8 @@ function launch(){
 
                 
 
-                showCards:function(){
-                    console.log(this.newsCards)
-                },
-
-                // funzione che al click riporta la pagina a top 0
+                
+                // funzione che al click torna la visualizzazione all'inizio della pagina
                 turnUp: function () {
                 window.scrollTo({ top: 0, behavior: 'smooth'});
                 },
@@ -240,11 +226,6 @@ function launch(){
         })
     }
 
-
-
-
-    
-    
       
 
 function init() {
@@ -252,7 +233,7 @@ function init() {
 
 
     
-
+    /* funzione jq che mostra i loghi sponsor */
     $('.owl-carousel').owlCarousel({
         loop:true,
         margin:10,
@@ -270,9 +251,6 @@ function init() {
             }
         }
     })
-
-
-
 
 
 }
