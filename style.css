@@ -415,6 +415,10 @@ nav{
 
 }
 
+.social-icons i:hover{
+    background-color: #181515;
+}
+
 .maxi-label .social-icons i:first-child{
     padding: 6px 7px;
 }
