@@ -39,6 +39,7 @@ function launch(){
 
             'active':'',
             'index':0,
+            img:'',
 
             'newsCards':[
                                 {
@@ -74,56 +75,66 @@ function launch(){
                                     visibility:false
                                 },
                                 
-                            ]
+                            ],
+
+                    darkSlider:[
+                        "img/h3-img-04.png" , "img/h3-img-07.png", "img/h3-img-08.png"
+                        ],
+
+                    footerColumnOne:[
+                                        {
+                                            title:'About',
+                                            text:'We created Everlead to effectively become the stepping stone towards meeting all your goals & achieving business success.',
+                                            icons:['<i class="fab fa-linkedin-in"></i>','<i class="fab fa-facebook-f"></i>','<i class="fab fa-twitter"></i>']
+                                        }
+                    ],
+
+
+                    footerColumnTwo:[
+                        {
+                            title:'Twitter',
+                            text:[
+                                '#GDPR, or General Data Protection Regulation, is a regulation in the EU #law that means all businesses must protect… ',
+                                        
+                           'You want to make the best out of your #skills and share your expertise while helping others – plus gain some…'
+                        
+                    
+                                ]
+                        }
+                    ],
+
+                    footerColumnThree:[
+                        {
+                            title:'Important links',
+                            links:['About me', 'About us', 'Language packs', 'Become a coach', 'Monthly events']
+                        }
+                    ],
+
+                    footerColumnFour:[
+                        {
+                            title:'Contact me',
+                            icons:['<i class="fas fa-map-marker-alt"></i>','<i class="fas fa-phone-alt"></i>','<i class="far fa-envelope"></i>'],
+
+                            links:['457 BigBlue Street, NY 10013', '(315) 5512-2579', 'everlead@qodeinteractive.com']
+                        }
+                    ],
             
 
 
                     },
-
+                    
 
                    mounted:{
-                    increase:function () {
-                        let speed = 40;
-                        let limit = parseInt(document.getElementById("value1").innerHTML, 10);
-                        let limit2 = parseInt(document.getElementById("value2").innerHTML, 10);
-                        let limit3 = parseInt(document.getElementById("value3").innerHTML, 10);
-                        let limit4 = parseInt(document.getElementById("value4").innerHTML, 10);
-    
-    
-                    
-                        for(let i = 0; i <= limit; i++) {
-                            setTimeout(function () {
-                                document.getElementById("value1").innerHTML = i + "%";
-                            }, speed * i);
-                        }
-    
-                        for(let i = 0; i <= limit2; i++) {
-                            setTimeout(function () {
-                                document.getElementById("value2").innerHTML = i + "%";
-                            }, speed * i);
-                        }
-    
-                        for(let i = 0; i <= limit3; i++) {
-                            setTimeout(function () {
-                                document.getElementById("value3").innerHTML = i + "%";
-                            }, speed * i);
-                        }
-    
-                        for(let i = 0; i <= limit4; i++) {
-                            setTimeout(function () {
-                                document.getElementById("value4").innerHTML = i + "%";
-                            }, speed * i);
-                        }
-                    },
+                   
                 },
 
                   
                         
                     
 
-       // created: //function () {
-                   // this.slidesLoop();
-               // },
+        created: function () {
+                    this.slidesLoop();
+                },
                 
        
          
@@ -134,16 +145,58 @@ function launch(){
        methods:{
             prevSlide:function(){
                 this.index--;
+
                 if(this.index < 0){
-                    this.index = (this.img.length - 1)
+                  return  this.index = (this.imgNavSlider.length - 1);
                 }
+
         },
                     
             nextSlide:function(){
                 this.index++;
+
                if(this.index >= this.imgNavSlider.length){
-                   this.index = 0;
+                  return this.index = 0;
                }
+
+            },
+
+
+            prevSlideOne:function(){
+                this.index--;
+
+                if(this.index < 0){
+                  return  this.index = (this.imgSectJason.length - 1);
+                }
+
+        },
+                    
+            nextSlideOne:function(){
+                this.index++;
+
+               if(this.index >= this.imgSectJason.length){
+                  return this.index = 0;
+               }
+
+            },
+
+
+            prevSlideTwofunction(){
+                this.index--;
+
+                if(this.index < 0){
+                  return  this.index = (this.darkSlider.length - 1);
+                }
+
+        },
+                    
+            nextSlideTwofunction(){
+                this.index++;
+
+               if(this.index >= this.darkSlider.length){
+                  return this.index = 0;
+               }
+
             },
                
     
@@ -169,7 +222,9 @@ function launch(){
 
                 showCards:function(){
                     console.log(this.newsCards)
-                }
+                },
+
+                
                 
               
 
@@ -188,6 +243,23 @@ function launch(){
 function init() {
     launch()
 
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    })
 
 
 

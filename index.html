@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
     <!-- font awesame -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -28,9 +29,8 @@
             <!-- componente vue slider  -->
 <!-- componente jumbotron  -->
             <ul class="header-slider">
-                <li> 
-                    <i class='fas fa-long-arrow-alt-left'></i>
-
+                <li class="transparent"> 
+                    
                 </li>
     
                 <li>
@@ -53,10 +53,10 @@
                         </div>
                         <div class="hdButt">
                             <span>
-                                <a  href="">READ MORE</a> <label class="lt-border"></label>
+                                <a  href="">READ MORE</a> <label class="lt-border"></label><i class='fas fa-long-arrow-alt-right'></i>
                             </span>
                             <span>
-                                <a  href="">PURCHASE</a> <label class="lt-border"></label>
+                                <a  href="">PURCHASE</a> <label class="lt-border"></label><i class='fas fa-long-arrow-alt-right'></i>
                             </span>
                         </div>
                     </div>
@@ -64,7 +64,9 @@
                </li>
     
                <li>
-                <i @click="nextSlide" class="fas fa-long-arrow-alt-right" ></i>                
+                <i @click='nextSlide()' class="fas fa-long-arrow-alt-right big-slider-right" ></i>    
+                <i @click='prevSlide()'class='fas fa-long-arrow-alt-left big-slider-left'></i>
+            
 
                </li>
             </ul>
@@ -75,9 +77,15 @@
                 </div>
 
                 <div class="list-nav-container">
+                    <i class="fas fa-long-arrow-alt-right " ></i> 
                     <ul>
                         <li v-for='item in navList'>
+                            
                             <a href="">{{item.toUpperCase()}}</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-bars"></i>
                         </li>
 
 
@@ -137,8 +145,13 @@
                         <img  @mouseover="stopSlidesLoop"  @mouseleave="slidesLoop" v-bind:src="imgSectJason[index]" alt="" >
                     </li>
                     <li>
-                        <img  src="svg/arrow.svg" alt="">
-                        <img  src="svg/arrow.svg" alt="">
+                        <span @click='prevSlideOne()'class="jason-arrow-left">
+                            <i class='fas fa-long-arrow-alt-left '></i>
+                        </span>
+                        
+                        <span @click="nextSlideOne()" class="jason-arrow-right">
+                            <i class='fas fa-long-arrow-alt-right '></i>
+                        </span>
 
                     </li>
                 </ul>
@@ -149,8 +162,9 @@
                    <div class="h-line-cont"></div>
                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
 
-                   <h2 class="signature">
-                    Jason Brick</h2>
+                   <span class="signature">
+                       <img src="img/firma.png" alt="">
+                   </span>
 
                    <div class="social-icons">
                     <i class="fab fa-linkedin-in"></i>
@@ -220,7 +234,7 @@
                 <div class="progress-bar-box">
                         <div class="first-bar-cont">
                             <label>Mentorship</label>
-                            <span id="value1">78</span>
+                            <span id="value1">78%</span>
 
                             <div class="chart">
 
@@ -232,7 +246,7 @@
                     <div class="progress-bar-box">
                             <div class="first-bar-cont">
                                 <label>Education</label>
-                                <span id="value2">95</span>
+                                <span id="value2">95%</span>
 
                                 <div class="chart">
 
@@ -245,7 +259,7 @@
                     <div class="progress-bar-box">
                             <div class="first-bar-cont">
                                 <label>Learning</label>
-                                <span id="value3">65</span>
+                                <span id="value3">65%</span>
 
                                 <div class="chart">
 
@@ -258,7 +272,7 @@
                     <div class="progress-bar-box">
                             <div class="first-bar-cont">
                                 <label>Motivation</label>
-                                <span id="value4">83</span>
+                                <span id="value4">83%</span>
 
                                 <div class="chart">
 
@@ -272,37 +286,399 @@
             </section>
 
             <section class="news">
-                <div class="container-multi-items-slider">
-
+               <div class="news-container">
+                   <h3>Latest news <i class="fas fa-circle"></i></h3>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                   <div class="h-line-cont"></div>
+                   <i class='fas fa-long-arrow-alt-left'></i>
+                   <i class='fas fa-long-arrow-alt-right'></i>
                    <ul>
-                       <li  v-if='' v-for='card in newsCards' class="item" v-if='card.visibility==true'>
-                           <img :src="card.img" alt="">
-                           <span>{{card.when}}</span>
-                           <span>{{card.who}}</span>
-                           <h3>{{card.title}}</h3>
 
-                        </li>
+                    <li> 
+                        <div class="img-cont">
+                            <img src="img/h1-blog-img-01.jpg" alt="">
+                            <label for=""><i class="fas fa-ticket-alt"></i> Business, Leanding</label>
+                        </div>
+                        <span class="details-card">
+                            <i class="far fa-clock"></i>
+                            May 5, 2019
+                            <i class="far fa-user"></i>
+                            Amanda Doe
+                        </span>
+                        <h4>New Business Day</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  </p>
+                        <a  class='read-more' href="">READ MORE</a> 
+
+                    </li>
+
+                    <li> 
+                        <div class="img-cont">
+                            <img src="img/h1-blog-img-02.jpg" alt="">
+                            <label for=""><i class="fas fa-ticket-alt"></i> Business, Leanding</label>
+                        </div>
+                        <span class="details-card">
+                            <i class="far fa-clock"></i>
+                            May 5, 2019
+                            <i class="far fa-user"></i>
+                            Amanda Doe
+                        </span>
+                        <h4>New Business Day</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  </p>
+                        <a  class='read-more' href="">READ MORE</a> 
+
+                    </li>
+
+                    <li> 
+                        <div class="img-cont">
+                            <img src="img/h1-blog-img-03.jpg" alt="">
+                            <label for=""><i class="fas fa-ticket-alt"></i> Business, Leanding</label>
+                        </div>
+                        <span class="details-card">
+                            <i class="far fa-clock"></i>
+                            May 5, 2019
+                            <i class="far fa-user"></i>
+                            Amanda Doe
+                        </span>
+                        <h4>New Business Day</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do nulla...  </p>
+                        <a  class='read-more' href="">READ MORE</a> 
+
+                    </li>
                    </ul>
 
-                    
-
-
-
-                </div>
-                </section>
+               </div>
                 
+            </section>
+
+            <section class="dark-slider">
+
+                <ul class="dark-slider-cont">
+                    
+                        
+                            <li>
+                                <i @click="prevSlideTwo()" class="fas fa-long-arrow-alt-left"></i>
+                            </li>
+                
+                            <li>
+                               <img  @mouseover="stopSlidesLoop"  @mouseleave="slidesLoop" v-bind:src="darkSlider[index]" alt="" >
+                               
+                                    <h3 v-if='(darkSlider[index])=="img/h3-img-04.png"'>Cynthia Clarck</h3>
+                                    <h3 v-if='(darkSlider[index])=="img/h3-img-07.png"'>Clarice Hastings</h3>
+                                    <h3 v-if='(darkSlider[index])=="img/h3-img-08.png"'>Brenda Kelly</h3>
+                               <p>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus magni vero labore quo ducimus exercitationem ea officia."</p>
+                           </li>
+                
+                           <li>
+                            <i @click="nextSlideTwo()" class="fas fa-long-arrow-alt-right" ></i>
+                           </li>
+                </ul>      
+
+                
+                        
+            </section>
+
+
+            <section class="video">
+
+                <img src="img/h1-img-04.jpg" alt="">
+                <i class="fas fa-play"></i>
+
 
             </section>
-            <section></section>
-            <section></section>
-            <section></section>
-            <section></section>
+
+            <section class="circles">
+                <div class="circles-container">
+                    <div class="circle">
+                        <h2>12</h2>
+                        <p>Years of experience</p>
+                        <span class="h-line-cont"></span>
+                </div>
+
+                
+                    <div class="circle">
+                        <h2>36</h2>
+                        <p>Succesful projects</p>
+                        <span class="h-line-cont"></span>
+                </div>
+
+                
+                    <div class="circle">
+                        <h2>76</h2>
+                        <p>Reliable clients</p>
+                        <span class="h-line-cont"></span>
+                </div>
+
+                
+                    <div class="circle">
+                        <h2>12</h2>
+                        <p>Years of experience</p>
+                        <span class="h-line-cont"></span>
+                </div>
+            </div>
+
+            </section>
+
+
+            <section class="slider-teach">
+                <div class="teachers-container">
+                    <h2>We can teach you <i class="fas fa-circle"></i></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <div class="h-line-cont"></div>
+                   
+                    <ul class="teachers-list">
+                       
+                        <li>  
+                            <img src="img/teacher-1.jpg" alt="">
+                            <div class="social-label">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h3>Sandra Harvey</h3>
+                            <span>Instructor</span>
+                        </li>
+
+                        <li>  
+                            <img src="img/techer-2.jpg" alt="">
+                            <div class="social-label">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h3>Christine Yin</h3>
+                            <span>Founder</span>
+
+                        </li>
+
+                        <li>  
+                            <img src="img/teacher-3.jpg" alt="">
+                            <div class="social-label">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h3>Ruth Hunter</h3>
+                            <span>Manager</span>
+
+                        </li>
+                    </ul>
+                </div>
+                <i class='fas fa-long-arrow-alt-left'></i>
+                <i class='fas fa-long-arrow-alt-right'></i>
+
+            </section>
+
+            <section class="form">
+                <div class="form-container">
+                    <div class="left-map">
+                        <img class='map'src="img/h1-contact-rev-01.png" alt="">
+                        
+                        <img class='pointer one'src="img/h1-contact-rev-02.png" alt="">
+                        <span class="ny">
+                            <div>
+                                <h4>New York Coaching</h4>
+                                <a class='read-more'  href="">READ MORE</a> 
+                            </div>
+                        </span>
+
+                        <img class='pointer two'src="img/h1-contact-rev-02.png" alt="">
+                        
+                        <img class='pointer three'src="img/h1-contact-rev-02.png" alt="">
+                    </div>
+
+                    <div class="right-form">
+
+                        <h2>Contact us <i class="fas fa-circle"></i></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <div class="h-line-cont"></div>
+
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                        <input class="message" type="text" placeholder="Write a message...">
+
+                        <div class="hdButt">
+                            
+                            <span>
+                                <a  href="">SEND</a> <label class="lt-border"></label><i class='fas fa-long-arrow-alt-right'></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="logos-slider">
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><img class='map'src="img/h4-clients-img-03.png" alt=""></div>
+                    <div class="item"><img class='map'src="img/h4-clients-img-05.png" alt=""></div>
+                    <div class="item"><img class='map'src="img/h4-clients-img-07.png" alt=""></div>
+                    <div class="item"><img class='map'src="img/h4-clients-img-09.png" alt=""></div>
+                    <div class="item"><img class='map'src="img/h4-clients-img-01.png" alt=""></div>
+                    
+                </div>
+            </section>
+
+            <section class="pricing">
+                <div class="pricing-text-container">
+                    <h2>Pricing plans <i class="fas fa-circle"></i></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <div class="h-line-cont"></div>
+
+                </div>
+                <div class="pricing-container">
+                    <div class="pricing-item">
+                        <h4>Basic plan <i class="fas fa-circle"></i></h4>
+                        <h2>100</h2><span class="dollar">$</span>
+                        <div class="h-line-cont"></div>
+
+                        <ul>
+                            <li>Lorem ipsum dolor svit elit</li>
+                            <li>Adipiscing elit sed eiusi et</li>
+                            <li>Tempor incididunt ut labor</li>
+                        </ul>
+                        <div class="hdButt">
+                            
+                            <span>
+                                <a  href="">PURCHASE</a> <label class="lt-border"></label><i class='fas fa-long-arrow-alt-right'></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-item">
+                        <h4>Premium plan <i class="fas fa-circle"></i></h4>
+                        <h2>200</h2><span class="dollar">$</span>
+                        <div class="h-line-cont"></div>
+
+
+                        <ul>
+                            <li>Lorem ipsum dolor svit elit</li>
+                            <li>Adipiscing elit sed eiusi et</li>
+                            <li>Tempor incididunt ut labor</li>
+                        </ul>
+                        <div class="hdButt">
+                            
+                            <span>
+                                <a  href="">PURCHASE</a> <label class="lt-border"></label><i class='fas fa-long-arrow-alt-right'></i>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="pricing-item">
+                        <h4>Deluxe plan <i class="fas fa-circle"></i></h4>
+                        <h2>150</h2><span class="dollar">$</span>
+                        <div class="h-line-cont"></div>
+
+
+
+                        <ul>
+                            <li>Lorem ipsum dolor svit elit</li>
+                            <li>Adipiscing elit sed eiusi et</li>
+                            <li>Tempor incididunt ut labor</li>
+                        </ul>
+                        <div class="hdButt">
+                            
+                            <span>
+                                <a  href="">PURCHASE</a> <label class="lt-border"></label><i class='fas fa-long-arrow-alt-right'></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
 
         </main>
 
         <!-- componente vue footer  -->
-        <footer></footer>
+        <footer>
+            <div class="footer-up-container">
+
+                <div class='super-row'>
+                    <ul class="first column">
+                        <li v-for='item in footerColumnOne'>
+                        <h3>{{item.title}}</h3>
+                        <div class="h-line-cont"></div>
+                        <p>{{item.text}}</p>
+                        <div class="social-icons">
+                            <i class="fab fa-linkedin-in"></i>
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                           </div>
+                        </li>
+                        
+                    </ul>
+
+                    <ul class="second column">
+                        <li v-for='item in footerColumnTwo'>
+                        <h3>{{item.title}}</h3>
+                        <div class="h-line-cont"></div>
+                         <div class="flex-adapter">  
+                            <i class="fab fa-twitter"></i>
+                            <p>{{item.text[0]}} <a href="">https://t.co/4jmLV4f5nD</a></p>
+                            <i class="fab fa-twitter"></i>
+                            <p>{{item.text[1]}} <a href="">https://t.co/sLsf4r3MWk</a></p>
+                        </div> 
+
+                        </li>
+                        
+                    </ul>
+
+                    <ul class="third column">
+                        <li v-for='item in footerColumnThree'>
+                        <h3>{{item.title}}</h3>
+                        <div class="h-line-cont"></div>
+                        <div class="link" v-for='link in item.links'>
+                            {{link}}
+                        </div>
+                        </li>
+                        
+                    </ul>
+
+                    <ul class="fourth column">
+                        <li v-for='item in footerColumnFour'>
+                        <h3>{{item.title}}</h3>
+                        <div class="h-line-cont"></div>
+                        <div class=icons-adapter>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-phone-alt"></i>
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="fourth-text">
+                            <div class='link' v-for='link in item.links'>
+                                {{link}}
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" placeholder="Your Name">
+                            <h4 class="subscribe">SUBSCRIBE</h4>
+    
+                        </div>
+                        
+                        </li>
+                        
+                    </ul>
+                </div>  
+            </div>
+
+            <div class="footer-douwn">
+                <span>
+                    © 2021 Qode Interactive, All Rights Reserved
+                </span>
+            </div>
+
+        </footer>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 
 </body>
 
