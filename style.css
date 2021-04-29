@@ -226,7 +226,7 @@ nav{
 
 .spacialties{
     width: 85%;
-    height: 400px;
+    height: auto;
     background-color: white;
     position: absolute;
     top: 562px;
@@ -235,6 +235,7 @@ nav{
     z-index: 200;
     text-align: center;
     box-shadow: 2px 3px 10px 0 rgb(0 0 0 / 9%);
+    padding-bottom: 80px;
 
 }
 
@@ -365,7 +366,7 @@ nav{
     background-color: white;
     position: absolute;
     right: 0;
-    bottom:5.5%
+    bottom:3.5%
     
 }
 
