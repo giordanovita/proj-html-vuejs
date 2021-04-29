@@ -124,17 +124,22 @@ function launch(){
                     },
                     
 
-                   mounted:{
-                   
-                },
-
                   
                         
                     
 
         created: function () {
                     this.slidesLoop();
+                   
                 },
+
+
+                mounted() {
+                    document.addEventListener('scroll', this.scrollUp);
+                    document.addEventListener('scroll', this.scrollDown);
+                },
+               
+                    
                 
        
          
@@ -181,7 +186,7 @@ function launch(){
             },
 
 
-            prevSlideTwofunction(){
+            prevSlideTwo:function(){
                 this.index--;
 
                 if(this.index < 0){
@@ -190,7 +195,7 @@ function launch(){
 
         },
                     
-            nextSlideTwofunction(){
+            nextSlideTwo:function(){
                 this.index++;
 
                if(this.index >= this.darkSlider.length){
@@ -224,12 +229,14 @@ function launch(){
                     console.log(this.newsCards)
                 },
 
-                
-                
-              
+                // funzione che al click riporta la pagina a top 0
+                turnUp: function () {
+                window.scrollTo({ top: 0, behavior: 'smooth'});
+                },
 
-            
-       }
+
+            } 
+       
         })
     }
 
@@ -242,6 +249,9 @@ function launch(){
 
 function init() {
     launch()
+
+
+    
 
     $('.owl-carousel').owlCarousel({
         loop:true,
@@ -266,4 +276,5 @@ function init() {
 
 
 }
+
 document.addEventListener('DOMContentLoaded', init);
